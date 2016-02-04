@@ -1,0 +1,1028 @@
+
+
+<html><head></head><body  >
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+ <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://openlayers.org/api/OpenLayers.js"></script>
+
+    
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<script src="http://openlayers.org/api/OpenLayers.js"></script>
+    
+    <style>
+.nav-pills li a{
+background-color: #E0E0E0;
+    border-color: white; border-style: solid;
+    
+}
+          
+
+         
+        .error {
+    color:#FF0000;
+}
+        
+        
+     .olImageLoadError { 
+    /* when OL encounters a 404, don't display the pink image */
+    background-image:url('s.png')
+   
+} 
+        
+        
+        
+        
+        
+     .nopadding {
+   padding: 0 ;
+   margin: 0 ;
+          
+}
+   .center {
+    margin: auto;
+    width: 60%;
+    border:3px solid #8AC007;
+    padding: 10px;
+}
+      
+
+
+        @media (max-width: 1340px) {
+  .col-lg-1 {
+
+  }
+}
+        .grid7 .col-lg-1 { width: 14.285714285714%; }
+
+   
+        .row {
+            padding-top : 30px;
+                vertical-align:middle;
+
+        }
+     image
+        {
+         max-width:100%; 
+max-height:100%;
+margin:auto;
+display:block;   
+        }
+        label{
+    color: rgb(255,255,255);
+            
+        }
+        
+    .red
+        
+        {
+    color: rgb(255,0,0);
+        }
+        body {
+  background: url(bg.jpg) no-repeat;
+  background-size: 100%;
+             -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+        
+        
+        
+    #l{
+        margin-left:65px;
+    }
+            #b{
+        margin-left:60px;
+    }
+    
+        .c{ text-align: left;
+        margin-left:30px;
+    }
+        
+           .d{
+      text-align: right;   margin-right:100px;
+    }
+          .a,hr{
+              background-color: rgba(100, 100, 100, 0.4);
+  margin-left:10%;   margin-right:10%; 
+  
+    }
+         .z {
+    text-align: left;margin-left:80px;
+    }
+        
+  .wrap {
+ 
+   margin:0 auto;
+      
+}
+.left {
+   float: left;
+   text-align: left;
+      margin-left:10%; 
+
+}
+.right {
+   float:right;text-align: left;
+      margin-right:10%; 
+ 
+}
+        .r {
+   float:right;
+      margin-right:15%; 
+ 
+}
+      .x {
+   float:left;
+      margin-left:44%; 
+ 
+}
+    
+        
+        
+        
+    </style>
+    
+      <center> <h1>Forecast Search  </h1> </center> 
+
+ <form class  = "a"  id = '0' >
+       <fieldset >
+
+          <div class = "container-fluid">
+
+     <div class = "row">
+        <div class=" col-md-2  ">
+
+<label>Street Address:</label><span class = "red">*</span>
+<input  class="form-control"  id = "1" type="text"   placeholder="Enter street name" name="address"  required>
+<br><span id = "error1" class = "red"></span>
+</div>
+ 
+         <div class=" col-md-2 ">
+
+<label>City:</label><span class = "red">*</span>
+<input  class="form-control" type="text"   id = "2"   placeholder="Enter the city name"  name="city"   required >
+       <br><span id = "error2" class = "red"></span>      
+</div>   <div class=" col-md-2 ">
+         
+        
+         
+         
+         
+<label>State:</label><span class = "red">*</span>
+<select class= "form-control"    id = "3" class = "r" name="state"   >
+    
+    	<option value="">Select your state...</option>
+
+    <option value="AL" >Alabama</option>
+  <option value="AK">Alaska</option>
+  <option value="AZ">Arizona</option>
+  <option value="AR">Arkansas</option>
+  <option value="CA">California</option>
+  <option value="CO">Colorado</option>
+  <option value="CT">Connecticut</option>
+  <option value="DE">Delaware</option>
+  <option value="FL">Florida</option>
+  <option value="GA">Georgia</option>
+  <option value="HI">Hawaii</option>
+  <option value="ID">Idaho</option>
+  <option value="IL">Illinois</option>
+  <option value="IN">Indiana</option>
+  <option value="IA">Iowa</option>
+  <option value="KS">Kansas</option>
+  <option value="KY">Kentucky</option>
+  <option value="LA">Louisiana</option>
+  <option value="ME">Maine</option>
+  <option value="MD">Maryland</option>
+  <option value="MA">Massachusetts</option>
+  <option value="MI">Michigan</option>
+  <option value="MN">Minnesota</option>
+  <option value="MS">Mississippi</option>
+  <option value="MO">Missouri</option>
+  <option value="MT">Montana</option>
+  <option value="NE">Nebraska</option>
+  <option value="NV">Nevada</option>
+  <option value="NH">New Hampshire</option>
+  <option value="NJ">New Jersey</option>
+  <option value="NM">New Mexico</option>
+  <option value="NY">New York</option>
+  <option value="NC">North Carolina</option>
+  <option value="ND">North Dakota</option>
+  <option value="OH">Ohio</option>
+  <option value="OK">Oklahoma</option>
+  <option value="OR">Oregon</option>
+  <option value="PA">Pennsylvania</option>
+  <option value="RI">Rhode Island</option>
+  <option value="SC">South Carolina</option>
+  <option value="SD">South Dakota</option>
+  <option value="TN">Tennessee</option>
+  <option value="TX">Texas</option>
+  <option value="UT">Utah</option>
+  <option value="VT">Vermont</option>
+  <option value="VA">Virginia</option>
+  <option value="WA">Washington</option>
+  <option value="WV">West Virginia</option>
+  <option value="WI">Wisconsin</option>
+  <option value="WY">Wyoming</option>
+
+</select>
+         
+    <br><span id = "error3" class = "red"></span>
+    </div>
+ 
+         <div class=" col-md-2 ">
+
+             
+             
+<label> Degree: </label><span class = "red">*</span>     <br>
+<input type="radio" id = "4" name="degree" value="us" checked> <label>Fahrenheit</label> <input type="radio"  id = "6" name="degree" value="si">
+<label>Celsius</label>
+    
+</div> 
+     
+         
+  <div class=" col-md-2  col-md-offset-2 " style = "   text-align: right;">
+   
+ <button class="btn btn-primary"  id = "submit" value = "Search" type="submit"  name = "submit" > <span class='glyphicon glyphicon-search'></span>Search     
+
+       
+            
+        <button type = "button"  class="btn btn-default" onclick = " $('#1').val(''); $('#2').val(''); $('#3').val('');         document.getElementById('4').checked= true;        document.getElementById('error1').innerHTML= '';        document.getElementById('error2').innerHTML= '';        document.getElementById('error3').innerHTML= '';        document.getElementById('col').innerHTML= '';        document.getElementById('menu').innerHTML=''; "><span class="glyphicon glyphicon-refresh"></span>
+Clear</button><br>
+
+     <label>Powered By</label> <a href="http://forecast.io/"><img src = "forecast_logo.png" height="50" width="117"></a>
+        
+       
+             </div>
+</div>
+</div>
+              </fieldset></form>
+     <script>
+
+  
+             $.validator.addMethod("not", function(value, element) {
+          
+           var state =   document.getElementById("3");
+                  return  (state.options[state.selectedIndex].value == "select")   ;
+               
+                            
+                            
+                            
+} );
+         
+    $("#0").validate({
+		
+		rules: {
+		
+			'state': {
+				required: true	
+			}	,		
+            
+            'city': {
+				required: true	
+               
+			}	,		
+        'address': {
+				required: true	
+               
+			}							
+		},
+        
+        
+        
+        
+        messages: {
+	'state': {
+				required: "Please select a state"	
+			}	,		
+            
+            'city': {
+				required: "Please enter the city"
+               
+			}	,		
+        'address': {
+				required: "Please enter the address"
+               
+			}	
+                     
+						
+		}
+                     
+                     
+                     
+                     
+	});	     
+         
+</script>
+     
+          <script type="text/javascript">
+var json_data ;
+         
+         
+  
+function icon_select(p)
+{
+if(p == "clear-day")
+{ return "clear.png";}
+
+if(p == "clear-night" )
+{ return "clear_night.png";}
+
+if(p == "rain")
+{ return "rain.png";}
+
+if(p == "snow")
+{ return "snow.png";}
+
+    if(p == "sleet")
+{ return "sleet.png";}
+
+    
+if(p == "wind")
+{ return "wind.png";}
+
+
+
+if(p == "fog")
+{ return "fog.png";}
+
+
+if(p == "cloudy")
+{ return "cloudy.png";}
+
+if(p == "partly-cloudy-day")
+{ return "cloud_day.png";}
+
+if(p == "partly-cloudy-night")
+{ return "cloud_night.png";}
+
+
+}
+           
+                 
+                 
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '446155112255162',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.2' // use version 2.2
+  });
+
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+
+              
+              
+ var facebook_condition;
+              var facebook_temperature;
+              var facebook_icon;
+              
+              
+               function checkLoginState1() {
+        FB.ui({
+  method: 'feed',
+  link: 'http://forecast.io/',
+        
+  caption: 'WEATHER INFORMATION FROM FORECAST.IO',
+ picture: facebook_icon,
+  name: 'Current Weather in '+$("#2").val()+", "+$("#3").val(),
+description:facebook_condition +", "+ facebook_temperature,
+
+}, function(response){  if (response && !response.error_message) {
+      alert('Posted Successfully');
+    } else {
+      alert('Not Posted');
+    }
+                      
+});
+              
+  }
+              
+              
+              function hasvalue(a){
+                  
+                  if(a==undefined) return "N.A";
+                  else return a;
+      
+              }       
+         
+           function display_column(json)
+         
+         {
+                    if($("#4").prop('checked')){var degree = "&degF";}
+              else{ var degree =  "&degC";}
+
+             
+             var icon = icon_select(json.currently.icon);
+
+ var temperature_min = json.daily.data[0].temperatureMin;
+        var temperature_min=parseInt(temperature_min);
+
+         var temperature_max = json.daily.data[0].temperatureMax;
+        var temperature_max= parseInt(temperature_max);
+
+    var condition = json.currently.summary;
+             facebook_condition=condition;
+var temperature = json.currently.temperature;
+             temperature  = parseInt(temperature );
+                    facebook_temperature  = temperature;
+           
+             
+var chancerain = parseInt(json.currently.precipProbability)*100;
+          if(document.getElementById('4').checked==true){
+var precipIntensity = json.currently.precipIntensity;}
+          if(document.getElementById('6').checked==true){
+              var a = json.currently.precipIntensity;
+         var precipIntensity = a/25.4 ;
+        }
+          precipIntensity =   pre_convert(precipIntensity);
+
+             
+var windSpeed =  json.currently.windSpeed;
+var dewPoint = json.currently.dewPoint;
+             dewPoint  = dewPoint  +degree;
+             
+var humidity=   json.currently.humidity;
+humidity=   parseInt(100*humidity)+"%";
+var visibility = json.currently.visibility;
+
+var timezone =  json.timezone;
+  var lat = json.latitude;   
+var lon =json.longitude;
+             
+           
+             
+                if($("#6").prop('checked')){     var wind =  "m/s";}
+              else  {   var wind = "mph";}
+                if($("#6").prop('checked')){    var vis =  "km";}
+              else  {     var vis =  "mi";}
+         if(visibility == undefined)     vis="";
+         if(windSpeed == undefined)     wind="";
+             
+    
+             
+      
+            
+var sunriseTime= json[0][0];
+var sunsetTime= json[0][1];
+                 
+//sunsetTime = sunsetTime.toLocaleString('en-US', { timeZone: timezone  });
+
+ //sunriseTime = formatAMPM( sunriseTime);
+                    
+              facebook_icon = icon;
+
+             
+/*  date_default_timezone_set($timezone) ;
+var sunriseTime =new DateTime("@$sunriseTime1");   $sunsetTime = json.daily.data[0].sunsetTime;
+        $sunriseTime->setTimezone(new DateTimeZone($timezone));
+$sunsetTime = new DateTime("@$sunsetTime1");
+        $sunsetTime->setTimezone(new DateTimeZone($timezone));
+
+            */
+           var address = $("#1").val();
+var city = $("#2").val();
+var state = $("#3").val();
+    
+             
+             
+ $( "#col" ).replaceWith( "<div  id = 'col'><div class = 'col-lg-6 nopadding' background-color:black'><table class='table'  id = 'map_left' ><tr style = 'background-color: #FF9999' > <th class =  ' text-center'   ><img src =" + hasvalue(icon) +"  style = 'margin-top:30px;   max-width:200px%;    max-height: 200px;' ></th><td class =  ' text-center'><strong style = 'color:white;'>"+hasvalue(condition)+" in "+hasvalue(city)+", "+hasvalue(state)+ "</strong><br><strong style = ' color:white;  font-size: 800%;'>"+hasvalue(temperature)+"</strong>&nbsp&nbsp&nbsp<strong style = ' vertical-align:60px; color: white; font-size: 200%;'>"+hasvalue(degree)+"</strong><br><img  class = ' btn ' scope='public_profile,email' align = 'right'  onclick='checkLoginState1();' src = 'fb_icon.png' height = '60px' width = '70px'></img>  <br> <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class =  ' text-center' style ='color:blue;'>L:"+hasvalue(temperature_min)+"</span>|<span class =  ' text-center' style ='color:green;'>H:"+hasvalue(temperature_max)+"&deg</span> </th></tr><tr style = 'background-color: #FFFFFF' ><td  >Precipitation</td><td >"+precipIntensity+"</td></tr><tr  style =  'background-color: #FFCCCC	'><td >Chance of Rain</td><td >"+hasvalue(chancerain)+'%'+"</td></tr><tr style = 'background-color: #FFFFFF' ><td >Wind Speed</td><td >"+hasvalue(windSpeed) + ' ' + hasvalue(wind)+"</td></tr><tr style =  'background-color: #FFCCCC	'  ><td >Dew Point</td><td  >"+hasvalue(dewPoint)+"</td></tr><tr style = 'background-color: #FFFFFF' ><td >Humidity</td><td  >"+hasvalue(humidity)+"</td></tr><tr  style =  'background-color: #FFCCCC	'><td >Visibility</td><td >"+ hasvalue(visibility) + ' ' + hasvalue(vis)+"</td></tr><tr style = 'background-color: #FFFFFF'  ><td >Sunrise</td><td >"+ hasvalue(sunriseTime)+"</td></tr><tr style =  'background-color: #FFCCCC	'><td >Sunset</td><td >"+ hasvalue(sunsetTime)+"</td></tr></table></div><div class = 'col-lg-6 nopadding' style = ' border-color: white; border-style: solid;'> <div   id='map'> </div> </div></div> " );
+var map_height= $("#map_left:first-child").height();
+ $("#map").css("height",map_height);
+
+             
+      var zoom = 13;
+	var map = new OpenLayers.Map("map", 
+	{
+		units:'m',
+		projection: "EPSG:900913",
+		displayProjection: new OpenLayers.Projection("EPSG:4326")
+	});
+
+	
+
+
+    var mapnik = new OpenLayers.Layer.OSM();
+
+	
+
+        var layer_cloud = new OpenLayers.Layer.XYZ(
+        "clouds",
+        "http://${s}.tile.openweathermap.org/map/clouds/${z}/${x}/${y}.png",
+        {
+            isBaseLayer: false,
+            opacity: 0.7,
+            sphericalMercator: true
+        }
+    );
+
+    var layer_precipitation = new OpenLayers.Layer.XYZ(
+        "precipitation",
+        "http://${s}.tile.openweathermap.org/map/precipitation/${z}/${x}/${y}.png",
+        {
+            isBaseLayer: false,
+            opacity: 0.7,
+            sphericalMercator: true
+        }
+    );
+
+
+
+	var centre = new OpenLayers.LonLat(lon, lat).transform(new OpenLayers.Projection("EPSG:4326"), 
+								new OpenLayers.Projection("EPSG:900913"));
+	    map.addLayers([mapnik, layer_precipitation, layer_cloud]);
+        map.setCenter( centre, zoom);
+             
+        
+  
+             
+         }
+                        
+                          
+function pre_convert(p)
+{
+if(p>=0 && p < 0.002 )
+{ return "None";}
+
+if(p < 0.017 && p >= 0.002 )
+{ return "Very Light";}
+
+if(p < 0.1 && p >= 0.017 )
+{ return "Light";}
+
+if(p < 0.4 && p >=0.1 )
+{ return "Moderate";}
+
+if(p >=0.4)
+{ return "Heavy";}
+
+
+
+}
+
+              
+              
+              
+    
+  
+              function table(a,b){
+                  document.getElementById(a).innerHTML = b;
+                  
+              }
+              
+                function T_hour(json)
+         
+         {
+             
+             
+                    
+       if($("#4").prop('checked')){var degree = "&degF";}
+              else{ var degree =  "&degC";}
+           
+             
+                if($("#6").prop('checked')){     var wind =  "m/s";}
+              else  {   var wind = "mph";}
+                if($("#6").prop('checked')){    var vis =  "km";}
+              else  {     var vis =  "mi";}
+                if($("#6").prop('checked')){    var pre =  "hPa";}
+              else  {     var pre =  "mb";}
+             
+             
+    
+             
+             
+
+             $( "#col" ).replaceWith( "<div id = 'col' ><table WIDTH = '100%' height = '50px' ><tr   style = '  background-color: #428bca' > <th WIDTH = '20%'  style = 'color: white'  class =  ' text-center' >Time</th><th WIDTH = '20%'  style = 'color: white'class =  ' text-center'>Summary</th><th  WIDTH = '20%' style = 'color: white'class =  ' text-center'>Cloud Cover</th><th WIDTH = '20%'  style = 'color: white'class =  ' text-center'>Temp("+degree+")</th><th WIDTH = '20%'  style = 'color: white'class =  ' text-center'>View Details</th></tr></table>" );
+
+       for(var i = 0; i< 24; i ++){
+            
+var time= json[0][16+i];
+                  var time_off =new Date(time*1000).getTimezoneOffset();
+             var icon_url = icon_select(json.hourly.data[i].icon);
+           var icon  = " <img src ="+ icon_url + " height='40' width=â€˜80'>"
+var cloudCover= json.hourly.data[i].cloudCover;
+var temperature= json.hourly.data[i].temperature;
+
+
+var  t_id = "thour"+i; 
+          var  tp_id = "thourp"+i; 
+
+var windSpeed =  json.hourly.data[i].windSpeed;
+var humidity=   json.hourly.data[i].humidity;
+var visibility = json.hourly.data[i].visibility;
+var pressure = json.hourly.data[i].pressure;
+
+humidity=   parseInt(100*humidity)+"%";
+cloudCover=   parseInt(100*cloudCover)+"%";
+                    if(visibility == undefined)     vis="";
+         if(windSpeed == undefined)     wind="";
+         if(pressure == undefined)     pre="";
+      
+             
+              $( "#col" ).append("<table style = '     border-color: #C8C8C8;    border-width: 1px;border-style: solid;' width = '100%' ><tr height = '120px' style = ' background-color: white'><td width = '20%' class =  ' text-center'>" + time + "</th><td width = '20%' class =  ' text-center' >"+ hasvalue(icon) +"</th><td width = '20%' class =  ' text-center'>"+ hasvalue(cloudCover)+"</th><td width = '20%' class =  ' text-center' >"+hasvalue(temperature)+"</th><td width = '20%' class =  ' text-center'><button type='button' class='btn btn-info glyphicon glyphicon-plus text-center '  data-toggle='collapse' data-target='#"+t_id+"'></th></tr></table>");
+           
+     $( "#col" ).append("<div height = '120px' id = "+t_id+"   class = 'collapse  table-responsive ' style = 'background-color:#E0E0E0;' ><div  style = 'margin-left:5%;margin-top:20px;margin-bottom:60px;margin-right:5%; '> <table  width = '80px'  class='table table-responsive'  ><tr width = '80%'  style = 'margin-left:20%;margin-right:20%;  background-color: white;'><th class =  ' text-center'>Wind </th><th class =  ' text-center'>Humidity</th><th class =  ' text-center'>Visibility</th><th class =  ' text-center'>Pressure</th></tr><tr width = '80%'  style = 'background-color:#E0E0E0; 'margin-left:20%;margin-right:20%;'  ><td class =  ' text-center'>"+hasvalue(windSpeed)+wind+"</td><td class =  ' text-center'>"+hasvalue(humidity)+"</td><td class =  ' text-center'>"+hasvalue(visibility)+vis+"</td><td class =  ' text-center'>"+hasvalue(pressure)+pre+"</td>  </tr></table></div></div>");
+           
+  //   document.getElementById(tp_id).addEventListener("click", table(t_id,detail)); 
+           
+
+           
+  
+      
+           
+           
+       }
+     
+                                $( "#col" ).append("</div>");
+
+                      
+
+         }
+              function d1(){
+                  display_column(json_data);
+              }function d2(){
+                  T_hour(json_data);
+              }
+              function d3(){
+                  sev(json_data);
+              }
+              
+              
+              function days(day){
+                  if(day == 1) return "Monday";
+                  if(day == 2) return "Tuesday";
+                  if(day == 3) return "Wednesday";
+                  if(day == 4) return "Thursday";
+                  if(day == 5) return "Friday";
+                  if(day == 6) return "Saturday";
+                  if(day == 0) return "Sunday";
+      
+              }
+              function m(m){
+                  
+                  if(m == 1) return "Jan";
+                  if(m == 2) return "Feb";
+                  if(m == 3) return "Mar";
+                  if(m == 4) return "Apr";
+                  if(m == 5) return "May";
+                  if(m == 6) return "Jun";
+                  if(m == 7) return "Jul";
+                  if(m == 8) return "Aug";
+                  if(m == 9) return "Sep";
+                  if(m == 10) return "Oct";
+                  if(m == 11) return "Nov";
+                  if(m == 12) return "Dec";
+
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+              }
+               
+                function sev(json)
+         
+         {
+
+     
+             
+             
+             $( "#col" ).replaceWith( "<div class = 'container-fluid' style = ' margin:auto; background-color: #202020 ;'   id = 'col'> <div style  =' margin-left:20%; margin-right:15%; '  class = ' row  '  id = 'col1'>" );
+
+
+        
+                  
+                    
+       if($("#4").prop('checked')){var degree = "&degF";}
+              else{ var degree =  "&degC";}
+           
+             
+                if($("#6").prop('checked')){     var wind =  "m/s";}
+              else  {   var wind = "mph";}
+                if($("#6").prop('checked')){    var vis =  "km";}
+              else  {     var vis =  "mi";}
+      if($("#6").prop('checked')){    var pre =  "hPa";}
+              else  {     var pre =  "mb";}
+             
+             
+    
+       for(var i = 1; i< 8; i ++){
+           
+  var icon_url = icon_select(json.daily.data[i].icon);
+           var icon  = " <img src ="+ icon_url + " height='80px' width=â€˜80px'>"                   
+var time= json.daily.data[i].time;
+                  var time_off =new Date(time*1000).getTimezoneOffset();
+             var icon_url = icon_select(json.daily.data[i].icon);
+           var icon  = " <img src ="+ icon_url + " height='40' width=â€˜80'>"
+           var icon1  = " <img src ="+ icon_url + " height='120' width=â€˜240'>"
+
+            var temperature_min = json.daily.data[i].temperatureMin;
+        var temperature_min=parseInt(temperature_min);
+
+             var temperature_max = json.daily.data[i].temperatureMax;
+        var temperature_max= parseInt(temperature_max);
+           var summary =  json.daily.data[i].summary;
+              var address = $("#1").val();
+var city = $("#2").val();
+var state = $("#3").val();
+    var degree = $("#4").val(); 
+           
+           
+           
+  time= new Date(time*1000+time_off *60);
+           var day = time.getDay();
+           var month = time.getMonth();
+           month = m(month);
+           var date = time.getDate();
+           time = time.toLocaleString();
+var m_and_d = month + " " + date;
+           var id = 'sev' + i;
+           var id1 = 'sev1' + i;
+           
+var sunriseTime= json[0][2*i] ;
+var sunsetTime= json[0][2*i+1] ;
+
+           var humidity=   json.daily.data[i].humidity;
+var windSpeed =  json.daily.data[i].windSpeed;
+var visibility = json.daily.data[i].visibility;
+var pressure = json.daily.data[i].pressure;
+humidity=   parseInt(100*humidity)+"%";
+                             if(pressure == undefined)     pre="";
+
+                    if(visibility == undefined)     vis="";
+         if(windSpeed == undefined)     wind="";
+              $( "#col1" ).append("<div   data-toggle='modal' data-target=#" +id+" class = '  text-center    col-lg-1 '  style='  color:white;  border-radius: 10px; margin: 10px ; height:29em; width :7em;  '><strong>"+days(day)+"</strong><br><br><strong>"+ hasvalue(m_and_d)  + "<br><br>" +  hasvalue(icon)  +"</strong><br><br>Min<br>Temp<br><br><strong style = 'font-size :200%;'>"+hasvalue(temperature_min) +  "&deg</strong><br>" +   "<br>Max<br>Temp<br><br><strong style = 'font-size :200%;'>"  +  hasvalue(temperature_max)   + "&deg</strong></div>");
+           
+        var modal = '  <div class="modal fade" id=' + id + ' role="dialog">  <div class="modal-dialog">    <div class="modal-content">  <div class="modal-header">  <button type="button" class="close" data-dismiss="modal">&times;</button>      <h4 class="modal-title">Weather in ' +  city +' on '+ hasvalue( m_and_d)  + '</h4> </div>   <div class="modal-body text-center">' +hasvalue(icon1)+' <br><strong  style = "font-size:150%;">'+days(day) +': ' + '<span style= "color:orange;">' +hasvalue(summary)+'</span></strong><br><br><br><div class= "row"> <div  class= " col-md-4 text-center"><strong>Sunrise Time</strong><p>'+hasvalue(sunriseTime)+'</p></div> <div  class= " col-md-4  text-center"><strong>Sunset Time</strong><p>'+hasvalue(sunsetTime)+'</p> </div> <div  class= " col-md-4 text-center" ><strong>Humidity</strong><p>'+hasvalue(humidity)+'</p></div></div><div class= "row"> <div  class= " col-md-4 text-center"><strong>Wind Speed</strong><p>'+hasvalue(windSpeed)+wind+'</p></div> <div  class= " col-md-4  text-center"><strong>Visibility</strong><p>'+hasvalue(visibility)+vis+' </div> <div  class= " col-md-4 text-center" ><strong>Pressure</strong><p>'+hasvalue(pressure)+pre+'</p></div></div>     <div class="modal-footer">          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> </div> </div></div></div>';
+
+  
+    
+     $( "#col1" ).append(modal);
+      
+                    
+
+          
+          
+           }
+          
+
+        $( "#col" ).append("</div>");
+        $( "#col" ).append("</div>");
+
+                          $( "#col" ).append("</div>");
+    var list =  $( "#col1" ).children();
+             $(list[0]).css("background-color","DodgerBlue");
+             $(list[2]).css("background-color","Red");
+             $(list[4]).css("background-color","Orange");
+             $(list[6]).css("background-color","OliveDrab ");
+             $(list[8]).css("background-color","MediumPurple");
+             $(list[10]).css("background-color","Pink");
+             $(list[12]).css("background-color","MediumVioletRed ");
+             
+             
+        if($(window).width()<1200) {
+            $("#col").css("background-color","");
+            $("#col1").css("margin-left","");
+            $("#col1").css("margin-right","");
+            
+   $(list[0]).css("width","auto");
+             $(list[0]).css("width","auto");
+             $(list[2]).css("width","auto");
+             $(list[4]).css("width","auto");
+             $(list[6]).css("width","auto ");
+             $(list[8]).css("width","auto");
+             $(list[10]).css("width","auto");
+             $(list[12]).css("width","auto ");
+             
+        }
+                       if($(window).width()>=1200) {
+
+                $(list[0]).css("width","7em");
+             $(list[2]).css("width","7em");
+             $(list[4]).css("width","7em");
+             $(list[6]).css("width","7em");
+             $(list[8]).css("width","7em");
+             $(list[10]).css("width","7em");
+             $(list[12]).css("width","7em");
+             
+            $("#col").css("background-color","#202020");
+            $("#col1").css("margin-left","20%");
+            $("#col1").css("margin-right","15%");
+
+        }
+          if($(window).width()<1630) {
+            $("#col1").css("margin-left","10%");
+            $("#col1").css("margin-right","10%");
+            
+
+             
+        }
+             
+                           if($(window).width()>=1630) {
+
+             
+            $("#col1").css("margin-left","20%");
+            $("#col1").css("margin-right","15%");
+
+        }
+     
+                           if($(window).width()<1340) {
+            $("#col1").css("margin-left","5%");
+            $("#col1").css("margin-right","5%");
+            
+
+             
+        }
+
+             
+      
+             
+             
+          $(window).resize(function(){
+        if(window.innerWidth < 1200) {
+            $("#col").css("background-color","");
+            $("#col1").css("margin-left","");
+            $("#col1").css("margin-right","");
+            
+   $(list[0]).css("width","auto");
+             $(list[0]).css("width","auto");
+             $(list[2]).css("width","auto");
+             $(list[4]).css("width","auto");
+             $(list[6]).css("width","auto ");
+             $(list[8]).css("width","auto");
+             $(list[10]).css("width","auto");
+             $(list[12]).css("width","auto ");
+             
+        }
+});
+                 $(window).resize(function(){
+        if(window.innerWidth >= 1200) {
+                $(list[0]).css("width","7em");
+             $(list[2]).css("width","7em");
+             $(list[4]).css("width","7em");
+             $(list[6]).css("width","7em");
+             $(list[8]).css("width","7em");
+             $(list[10]).css("width","7em");
+             $(list[12]).css("width","7em");
+             
+            $("#col").css("background-color","#202020");
+            $("#col1").css("margin-left","20%");
+            $("#col1").css("margin-right","15%");
+
+        }
+});        
+          $(window).resize(function(){
+        if(window.innerWidth < 1630) {
+            $("#col1").css("margin-left","10%");
+            $("#col1").css("margin-right","10%");
+            
+
+             
+        }
+});
+                 $(window).resize(function(){
+        if(window.innerWidth >= 1630) {
+            
+             
+            $("#col1").css("margin-left","20%");
+            $("#col1").css("margin-right","15%");
+
+        }
+});      
+     $(window).resize(function(){
+        if(window.innerWidth < 1340) {
+            $("#col1").css("margin-left","5%");
+            $("#col1").css("margin-right","5%");
+            
+
+             
+        }
+}); 
+
+        
+         }
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+         
+
+        $(document).ready(function(){
+$("#submit").click(function(){
+var address = $("#1").val();
+var city = $("#2").val();
+var state = $("#3").val();
+         if($("#4").prop('checked')){ var degree = $("#4").val();}
+              else{  var degree = $("#6").val();}
+    
+    
+   
+
+var dataString = 'address='+ address + '&city='+ city + '&state='+ state +'&degree=' + degree ;
+
+if(address==''||city==''||state=='select'||state==''||degree=='')
+{
+check();
+}
+else
+{
+// AJAX Code To Submit Form.
+$.ajax({
+type: "GET",
+url: "index1.php",
+      dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+
+data: dataString,
+cache: false,
+success: function(result){
+  
+      json_data = result;
+display_column(json_data);
+    $( "#menu" ).replaceWith(" <ul id = 'menu' class='nav nav-pills ' role='tablist'><li class = 'active'><a  class = ' btn ' data-toggle='tab'  onclick = 'd1(); '>Right Now</a></li><li><a class = ' btn ' data-toggle='tab' onclick = 'd2();'  >Next 24 Hours</a></li>   <li><a class = ' btn '  data-toggle='tab' onclick = 'd3(); '>Next 7 Days</a></li> </ul>");
+
+    
+    
+    
+}
+});
+}
+return false;
+});
+});
+
+       
+         
+      
+</script>
+    
+  
+    
+      
+  </fieldset >
+
+ 
+
+</form>
+           <hr>
+     
+<script>          
+                   
+              function layerError()
+              
+              {
+                  if(document.getElementsByClassName("olImageLoadError").length >0){
+                var list =  document.getElementsByClassName("olImageLoadError"); 
+                  for(var i = 0; i < list.length ;i++){
+                      
+                      list[i].innerHTML = "<div height= '256px'; width = '256px'  >Server Error</div>";
+                  }
+                  }
+                  
+              }
+               
+window.setInterval(function(){
+layerError();}, 1000);
+       </script>
+           <div  style = "     margin-left:10%;   margin-right:10%; ">
+               
+                        <div id = "menu" > </div>
+                       <div id = "col" ></div>
+                       <div id = "link" >     </div>
+    
+              </div>
+ 
+         
+    </body>
+</html>
