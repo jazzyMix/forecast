@@ -1,11 +1,11 @@
           <?php
     if( $_GET["degree"] != null &&$_GET["address"] != null && $_GET["city"] != null && $_GET["state"] != "select" )
     {
-$s = "https://maps.google.com/maps/api/geocode/xml?&address=".$_GET["address"].",".$_GET["city"].",".$_GET["state"]."&key=AIzaSyDemqBimkbHuYY3XLxzcpAxNpqUSTnksQI";
+$s = "https://maps.google.com/maps/api/geocode/xml?&address=".$_GET["address"].",".$_GET["city"].",".$_GET["state"]."&key=yourkeyhere";
        
      $xml = simplexml_load_file($s);
 
-$forecast =  "https://api.forecast.io/forecast/4f7d198e171398f6cdf132b5d70fba22/"
+$forecast =  "https://api.forecast.io/forecast/yourkeyhere/"
 .$xml->result->geometry->location->lat.",".$xml->result->geometry->location->lng."?units=".$_GET["degree"]."&exclude=flags"; 
 
         
