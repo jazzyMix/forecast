@@ -6,6 +6,6 @@ URL:http://cs-server.usc.edu:24425/weather.html
 
 
 ###List of API I use, thanks for providing these service for free:
-[openlayers](http://openlayers.org/api)  
+[openlayers](http://openlayers.org/en/v3.14.1/apidoc/)  
 [facebook](https://developers.facebook.com/)  
 [forecast.io](https://developer.forecast.io/)  
